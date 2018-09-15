@@ -1,0 +1,27 @@
+ div {
+        width: 80%;
+        margin: auto;
+    }
+    input {
+        width: 97%;
+        padding: 4px;
+        margin: 10px;
+    }
+
+    select {
+        width: 95%;
+        padding: 4px;
+        margin: 10px 10px;
+    }
+    
+    #div1 {
+    width: 500px;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    }
+    iframe{
+        width: 560px;
+        height: 315;
+
+    }

@@ -1,0 +1,37 @@
+#container{
+    width: 70%;
+    margin: auto;
+    background-color: black;
+}
+.flex{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: whitesmoke;
+}
+.flex > div{
+    background-color: white;
+    width: 125px;
+    margin: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+@media screen and (max-width: 600px){
+    body{
+        color: blue;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .flex > div{
+        width: 50%;
+        height: 100%;
+        background-color: brown;
+    }
+    
+}

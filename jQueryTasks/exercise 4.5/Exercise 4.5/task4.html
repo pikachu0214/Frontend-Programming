@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using jquery</title>  
+  <meta charset="utf-8">
+  <title>Jquery Exercise</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+  
+ 
+</head>
+<body>
+  <div class="container-fluid">
+    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
+    <div id='pContainer'>
+    <h1 id='p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, laudantium.</h1><br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" id="num1" placeholder="First number">
+      </div>
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" id="num2" placeholder="Second number">
+      </div>
+    </div>
+  <button type="button" class="btn btn-primary" id='add'>+</button>
+  <button type="button" class="btn btn-primary" id='subtract'>-</button>
+  <button type="button" class="btn btn-primary" id='multiply'>x</button>
+  <button type="button" class="btn btn-primary" id='divide'>/</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  // Insert your code here
+    $(document).ready(function () {
+    $("h1").hide();
+   $('#add').on("click", function () {
+     let num1 = parseFloat($("#num1").val());
+     let num2 = parseFloat($("#num2").val());
+     let sum = num1 + num2;
+        $("h1").text("Result: " + sum).show();
+    })
+         $('#subtract').on("click", function () {
+        let num1 = parseFloat($("#num1").val());
+        let num2 = parseFloat($("#num2").val());
+        let sum = num1 - num2;
+        $("h1").text("Result: " + sum).show();
+      })    
+       $('#multiply').on("click", function () {
+        let num1 = parseFloat($("#num1").val());
+        let num2 = parseFloat($("#num2").val());
+        let sum = num1 * num2;
+        $("h1").text("Result: " + sum).show();
+      })    
+       $('#divide').on("click", function () {
+        let num1 = parseFloat($("#num1").val());
+        let num2 = parseFloat($("#num2").val());
+        let sum = num1 / num2;
+        $("h1").text("Result: " + sum).show();
+      })    
+  })
+</script>
+</body>
+</html>

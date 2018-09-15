@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Using jquery</title>
+    <meta charset="utf-8">
+    <title>Jquery Exercise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <p id="p1"><strong>Chapter 1</strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore reiciendis rem ad harum aspernatur qui exercitationem
+            dicta pariatur doloribus rerum ipsa, porro cumque voluptatem necessitatibus voluptatibus corporis maiores itaque
+            soluta dignissimos quasi repellat nisi facilis ut. Ad explicabo consectetur, eligendi iste non illo, at quidem
+            cumque nam tenetur nobis nemo.</p>
+        <p><strong>Chapter 2</strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore reiciendis rem ad harum aspernatur qui exercitationem
+            dicta pariatur doloribus rerum ipsa, porro cumque voluptatem necessitatibus voluptatibus corporis maiores itaque
+            soluta dignissimos quasi repellat nisi facilis ut. Ad explicabo consectetur, eligendi iste non illo, at quidem
+            cumque nam tenetur nobis nemo.
+        </p>
+        <button type="button" class="btn btn-success" id="toggle">Toggle Class 1</button>
+        <button type="button" class="btn btn-success" id="fade">Fade out both</button>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        // Insert your code here
+        $(document).ready(function () {
+            $("#toggle").on("click", function(){
+                $("#p1").toggle();
+            })
+                $("#fade").on("click", function () {
+                    $("p").fadeToggle();
+                })
+        })
+    </script>
+</body>
+
+</html>

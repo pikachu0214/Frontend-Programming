@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dannys</title>
+<link rel="stylesheet" type="text/css" href="task1.css">
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</head>
+<body>
+    <div>
+       
+    <form>
+        First Name<br>
+            <input type='text' name='firstname' value='John'><br>
+         Last Name<br>
+            <input type='text' name='firstname' value='Johnson'><br>
+         Date of Birth<br>
+            <input type='date' name='dob'><br>
+        Gender<br>
+            <input type='text' name='male' value='male'><br>
+        Email<br>
+            <input type='email' name='email' value='j.johnson@gmail.com'><br>
+        Homepage<br>
+            <input type='text' name='homepage' value='www.j.johnson.net'><br>
+         Favorite Color<br>
+            <input type='color' name='color'><br>
+            <button type='button' onclick=''>save</button>
+    </form><br>
+    <iframe  src="https://www.youtube.com/embed/gZb4KoslhAk"  allow="autoplay; encrypted-media"
+        allowfullscreen></iframe><br><br>
+    
+        <p>Drag the products you want to buy to shopping bag</p>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Shopping basket
+                <p>Iphone X</p>
+                <p>Motorola Moto X</p><br>
+                <br>
+                <br>
+            </div><br><br><br>
+        <p>Products</p> 
+        <br>
+        <p id='drag1' draggable="true" ondragstart="drag(event)">Samsung Galaxy J5</p>
+        <p id='drag2' draggable="true" ondragstart="drag(event)">Nokia 8</p>  
+            </div>
+    </body>
+</html>
