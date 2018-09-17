@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="jquery-validation-1.17.0/lib/jquery.js"></script>
+    <script src="jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+</head>
+    <!-- Adding jQuery Plugin for country -->
+
+<body>
+    <div class="container-fluid">
+        <div class="container-fluid">
+        <h1>
+            <label for="header">Registration</label>
+        </h1>
+        </div>
+        <form id="signupForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter Your First Name" minlength="2"
+                        maxlength="40" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter Your Last Name" minlength="2" maxlength="40"
+                        required>
+                </div>
+            </div>
+            <div class="form-group col-md-12" >
+                <label for="inputAddress">Street Address</label>
+                <input type="text" name="StreetAddress" class="form-control" id="StreetAddress" placeholder="Enter Street Address" minlength="2"
+                    maxlength="40" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Postal Code</label>
+                    <input type="number" name="PostalCode" class="form-control" id="PostalCode" placeholder="Enter postal Code" minlength="5"
+                        maxlength="5" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputCountry">Country</label>
+                    <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="United States" data-flag="true">
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="company">Company</label>
+                    <select id="Company" name="Company" class="form-control">
+                        <option selected>Enter Company</option>
+                        <option>
+                            Haaga-Helia UAS
+                        </option>
+                        <option>
+                            Futurice
+                        </option>
+                        <option>
+                            Rovio
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="email" data-toggle="tooltip" data-placement="top" title="Input valid email address"
+                        name="email" minlength="2" maxlength="40" required>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Mastercard
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Visa
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Billing
+                    </label>
+                </div>
+            </div>
+        </form>
+         <div class="container-fluid">  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="Bootstrap-Country-Picker-jQuery/js/countrypicker.js"></script>    
+    <script src="app.js"></script>
+    <script>
+
+        // validate the comment form when it is submitted
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("submitted!");
+            }
+        });
+
+        $().ready(function () {
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: {
+                    firstname: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    lastname: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    StreetAddress: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    PostalCode: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 5
+                    },
+                    Country: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    Company: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    email: {
+                        required: true,
+                    }
+
+                },
+                messages: {
+                    firstname: {
+                        required: "Please enter your first name",
+                        minlength: "Please lengthen this text to 2 characters or more"
+                    },
+                    lastname: {
+                        required: "Please provide your last name",
+                        minlength: "Please lengthen this text to 2 characters or more"
+                    },
+                    StreetAddress: {
+                        required: "Please provide your address",
+                        minlength: "Please lengthen this text to 2 characters or more"
+                    },
+                    PostalCode: {
+                        required: "Please provide your zip code",
+                        minlength: "Please lengthen this text to 5 characters"
+                    },
+                    Country: {
+                        required: "Please choose your country or enter it here",
+                    },
+                    Company: {
+                        required: "Please choose your company or enter it here",
+                        minlength: "Please lengthen this text to 2 characters"
+                    },
+                    email: "Please enter a valid email address"
+
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
