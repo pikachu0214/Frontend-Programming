@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //App components
@@ -27,7 +27,28 @@ export default class Traininglist extends Component {
         });
       });
   };
-
+  
+  //add training to customer
+  addTraining = (link, training) => {
+    fetch("https://customerrest.herokuapp.com/api/trainings/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        date: this.state.date,
+        activity: this.state.activity,
+        duration: this.state.duration,
+        customer: link
+      })
+    })
+      .then(
+        toast.success("Training added", {
+          position: toast.POSITION.BOTTOM_CENTER
+        })
+      )
+      .catch(err => console.error(err));
+  };
   //delete training from list
   deleteTraining = idLink => {
     confirmAlert({
@@ -64,8 +85,15 @@ export default class Traininglist extends Component {
 
         {/* Body */}
         <div className="App-body">
-          <TrainingHeader trainings={this.state.trainings}/>
-          <TrainingTable trainings={this.state.trainings} deleteTraining={this.deleteTraining}/>
+          <TrainingHeader
+            data={this.state.trainings}
+            addTraining={this.addTraining}
+            getTrainingData={this.getTrainingData}
+          />
+          <TrainingTable
+            trainings={this.state.trainings}
+            deleteTraining={this.deleteTraining}
+          />
         </div>
       </div>
     );

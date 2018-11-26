@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -17,9 +17,19 @@ export default class TrainingTable extends Component {
           columns={[
             {
               columns: [
-                { Header: "Id", accessor: "_links.self.href", show: false },
-                { Header: "Activity", accessor: "activity" },
-                { Header: "Duration", accessor: "duration" },
+                {
+                  Header: "Id",
+                  accessor: "_links.self.href",
+                  show: false,
+                },
+                {
+                  Header: "Activity",
+                  accessor: "activity",
+                },
+                {
+                  Header: "Duration",
+                  accessor: "duration",
+                },
                 {
                   id: "date",
                   Header: "Date",

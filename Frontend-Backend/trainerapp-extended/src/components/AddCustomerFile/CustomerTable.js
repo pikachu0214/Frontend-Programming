@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SaveIcon from "@material-ui/icons/Save";
 import Button from "@material-ui/core/Button";
@@ -61,8 +61,10 @@ export default class CustomerTable extends Component {
                 },
                 {
                   id: "button",
+                  sortable: false,
+                  filterable: false,
                   width: 100,
-                  accessor: "",
+                  accessor: "links[0].href",
                   Cell: ({ value, row }) => (
                     <Button
                       variant="outlined"

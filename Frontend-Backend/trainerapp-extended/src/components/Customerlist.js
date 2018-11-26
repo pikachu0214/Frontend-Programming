@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //App components
@@ -74,8 +74,6 @@ export default class Customerlist extends Component {
   };
   //update and save customer list
   updateCustomer = (customer, link) => {
-    console.log(link);
-    console.log(customer);
     fetch(link, {
       method: "PUT",
       headers: {
