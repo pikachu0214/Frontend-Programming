@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import ReactTable from 'react-table';
-import 'react-table/react-table.css';
 import '../App.css';
 
+//App components
+import Header from "./Header";
+import CustomerHeader from "./CustomerHeader";
+import CustomerTable from "./CustomerTable";
 
-class Customerlist extends Component {
-  constructor(props){
-    super(props);
-    this.getCustomersData=this.getCustomersData.bind(this);
-   this.state = { customers: [] };
+export default class Customerlist extends Component {
+  state = { customers: [] };
 
-  }
   componentDidMount() {
     this.getCustomersData();
   }
-//getting customer list from rest api
+
+//Data from api
   getCustomersData = () => {
     fetch('https://customerrest.herokuapp.com/api/customers')
     .then((response) => response.json())
@@ -24,60 +23,15 @@ class Customerlist extends Component {
       });
     })
   }
-//rendering with React Table
   render() {
-    return (
-      <div className="App-body">
-        <header className="List-header">
-          <h5 className="List-title">Customer's List</h5>
-        </header>
-        <ReactTable
-        defaultPageSize={10}
-        pageSizeOptions={[5,10,15,20]}
-        data={this.state.customers}
-        columns={[
-            {
-              columns: [
-                {
-                  accessor: "_links.self.href",
-                  show: false
-                },
-                {
-                  Header: "First name",
-                  accessor: "firstname",
-                },
-                {
-                  Header: "Last name",
-                  accessor: "lastname",
-                },
-                {
-                  Header: "Email",
-                  accessor: "email",
-                },
-                {
-                  Header: "Phone",
-                  accessor: "phone",
-                },
-                {
-                  Header: "Address",
-                  accessor: "streetaddress",
-                },
-                {
-                  Header: "Postcode",
-                  accessor: "postcode",
-                },
-                {
-                  Header: "City",
-                  accessor: "city",
-                }
-              ]
-            }
-          ]}
-          filterable={true}
-          className="-highlight" >
-        </ReactTable>
-      </div>
-    );
-  }
-}
-export default Customerlist;
+    return <div className="container-fluid">
+        {/* Navbar Header */}
+        <Header />
+
+        {/* Body */}
+        <div className="App-body">
+          <CustomerHeader />
+          <CustomerTable customers={this.state.customers} />
+        </div>
+      </div>; 
+      }}

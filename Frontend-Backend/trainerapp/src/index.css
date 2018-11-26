@@ -12,3 +12,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+   .main-nav a:hover {
+     border-color: rgba(0,0,0, .1);
+   }
+   .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main-nav a {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+  
+  .main-nav a {
+  font-size: .95em;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 1em;
+  transition: .2s;
+}
+.main-nav a:hover,
+.main-nav .active {
+  color: #fff;
+}
