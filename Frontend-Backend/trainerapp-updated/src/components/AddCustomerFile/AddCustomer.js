@@ -1,8 +1,7 @@
 import React from "react";
 import SkyLight from "react-skylight";
-import AddIcon from "@material-ui/icons/Add";
 import Button from "@material-ui/core/Button";
-
+import AddIcon from "@material-ui/icons/Add";
 
 class AddCustomer extends React.Component {
   constructor(props) {
@@ -44,7 +43,7 @@ class AddCustomer extends React.Component {
     // Add car page doesn't fit to default size modal
     const addCustomerDialog = {
       width: "55%",
-      height: "450px",
+      height: "500px",
       marginTop: "-200px",
       marginLeft: "-35%"
     };
@@ -144,9 +143,10 @@ class AddCustomer extends React.Component {
             mini
             onClick={() => this.refs.simpleDialog.show()}
           >
-          <AddIcon />
+            <AddIcon />
           </Button>
         </div>
+        ;{" "}
       </div>
     );
   }

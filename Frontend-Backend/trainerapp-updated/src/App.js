@@ -1,25 +1,31 @@
 import React, { Component } from "react";
 import "./App.css";
-import Customerlist from "./components/Customerlist";
-import Traininglist from "./components/Traininglist";
-import Navigator from "./components/Navigator";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+//App components
+import HomePage from "./components/HomePage";
+import Traininglist from "./components/Traininglist";
+import Customerlist from "./components/Customerlist";
+import NotFound from "./components/NotFound";
+import Calendar from "./components/Calendar";
+import LoginPage from "./components/LoginPage";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <BrowserRouter>
+    return <BrowserRouter>
+        <div className="App">
           <div>
-            <Navigator />
             <Switch>
+              <Route exact path="/" component={LoginPage} />
+              <Route exact path="/homepage" component={HomePage} />
               <Route path="/trainings" component={Traininglist} />
               <Route path="/customers" component={Customerlist} />
+              <Route path="/calendar" component={Calendar} />
+              <Route component={NotFound} />
             </Switch>
           </div>
-        </BrowserRouter>
-      </div>
-    );
+        </div>
+      </BrowserRouter>;
   }
 }
 
