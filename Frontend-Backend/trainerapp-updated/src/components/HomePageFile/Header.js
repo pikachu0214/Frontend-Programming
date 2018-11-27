@@ -34,7 +34,7 @@ export default class Header extends Component {
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
                 <Button
-                  color="primary"
+                  color="secondary"
                   onClick={() => firebase.auth().signOut()}
                 >
                   SignOut
